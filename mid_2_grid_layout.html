@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid Layout</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "advertise main-content sidebar"
+        "advertise twin twin"
+        "footer footer footer";
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 10px;
+      padding: 10px;
+    }
+    .header { grid-area: header; background: #3399ff; padding: 20px; }
+    .advertise { grid-area: advertise; background: #ffcc00; padding: 20px; }
+    .main-content { grid-area: main-content; background: #66cc66; padding: 20px; }
+    .sidebar { grid-area: sidebar; background: #cc66ff; padding: 20px; }
+    .twin { background: #ff9933; padding: 20px; }
+    .footer { grid-area: footer; background: #3366cc; padding: 20px; }
+    .container .twin:nth-child(4) { grid-area: twin; }
+    .container .twin:nth-child(5) { grid-area: twin; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">.header</div>
+    <div class="advertise">.advertise</div>
+    <div class="main-content">.main-content</div>
+    <div class="sidebar">.sidebar</div>
+    <div class="twin">.twin</div>
+    <div class="twin">.twin</div>
+    <div class="footer">.footer</div>
+  </div>
+</body>
+</html>
